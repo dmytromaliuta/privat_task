@@ -19,6 +19,11 @@ function Table({ columns, data, isLoading }: TableProps) {
     }
 
     function updateCell(row: number, column: string, value: string) {
+        // if(!value.trim().length) {
+        //     setIsError(true)
+        // } else {
+        //     setIsError(false)
+        // }
         dispatch(updateCellAction(row, column, value))
     }
 

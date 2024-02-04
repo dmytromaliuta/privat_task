@@ -2,7 +2,8 @@ export enum TableDataTypes {
     FETCH_DATA = "FETCH_DATA",
     FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS",
     DELETE_ROW = "DELETE_ROW",
-    UPDATE_CELL = "UPDATE_CELL"
+    UPDATE_CELL = "UPDATE_CELL",
+    ADD_ROW = "ADD_ROW"
 }
 
 export interface DataItem {
@@ -44,4 +45,9 @@ interface UpdateCellAction {
     payload: CellPayload;
 }
 
-export type TableDataAction = FetchTableDataAction | FetchTableDataSuccessAction | DeleteRowAction | UpdateCellAction;
+interface CreateRowAction {
+    type: TableDataTypes.ADD_ROW;
+    payload: DataItem;
+}
+
+export type TableDataAction = FetchTableDataAction | FetchTableDataSuccessAction | DeleteRowAction | UpdateCellAction | CreateRowAction;

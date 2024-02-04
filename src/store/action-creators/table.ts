@@ -1,5 +1,5 @@
 import { Dispatch } from "redux"
-import { TableDataAction, TableDataTypes } from "../../types/table"
+import { DataItem, TableDataAction, TableDataTypes } from "../../types/table"
 
 const responseFromServer = [
     {
@@ -68,5 +68,12 @@ export const updateCell = (row: number, column: string, value: string): TableDat
             column,
             value
         }
+    }
+}
+
+export const addRow = (formValues: DataItem): TableDataAction => {
+    return {
+        type: TableDataTypes.ADD_ROW,
+        payload: formValues
     }
 }

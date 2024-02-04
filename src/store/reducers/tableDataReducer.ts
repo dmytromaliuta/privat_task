@@ -11,6 +11,8 @@ export const tableDataReducer = (state = initialState, action: TableDataAction):
             return {loading: true, data: []}
         case TableDataTypes.FETCH_DATA_SUCCESS:
             return {loading: false, data: action.payload}
+        case TableDataTypes.ADD_ROW:
+            return {loading: false, data: [...state.data, action.payload]}
         case TableDataTypes.DELETE_ROW:
             return {loading: false, data: state.data.filter((_, index) => index !== action.payload)}
         case TableDataTypes.UPDATE_CELL:
