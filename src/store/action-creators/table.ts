@@ -5,37 +5,8 @@ const responseFromServer = [
     {
         id: "1",
         col1: "Mr",
-        col2: "Dmytro",
+        col2: "Daniel",
         col3: "380974952344",
-    },
-    {
-        id: "2",
-        col1: "Mr",
-        col2: "John",
-        col3: "380974955666",
-    },
-    {
-        id: "3",
-        col1: "Ms",
-        col2: "Amila",
-        col3: "380974955033",
-    },
-    {
-        id: "4",
-        col1: "Ms",
-        col2: "Emili",
-        col3: "380974957333",
-    },
-    {
-        id: "5",
-        col2: "Danil",
-        col3: "380977245033"
-    },
-    {
-        id: "6",
-        col1: "Mr",
-        col2: "Dmytro",
-        col3: "380972555033",
     }
 ]
 
@@ -45,7 +16,7 @@ export const fetchTableData = () => {
             dispatch({ type: TableDataTypes.FETCH_DATA })
             setTimeout(() => {
                 dispatch({ type: TableDataTypes.FETCH_DATA_SUCCESS, payload: responseFromServer })
-            }, 500)
+            }, 5000)
         } catch (error) {
             //handling errors here
             //I didn't implement this part as we don't use real API and we just emulate delay
